@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "DSEG7";
+    src: url("fonts/DSEG7Classic-Regular.woff2") format("woff2"),
+         url("fonts/DSEG7Classic-Regular.woff") format("woff");
+}
+
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -70,4 +77,20 @@
 .btn:active {
     background-color: rgb(153, 139, 139);
     transform: scale(0.9);
+}
+
+#input, #output {
+    font-family: "DSEG7", monospace;
+    margin-right: 3vw;
+    align-self: flex-end;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+}
+
+#input {
+    font-size: 1em;
+}
+
+#output {
+    font-size: 2em;
 }
