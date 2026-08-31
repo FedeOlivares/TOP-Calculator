@@ -45,6 +45,7 @@ buttons.forEach(btn => {
   btn.addEventListener("click", () => {
     const val = btn.textContent;
     const type = btn.dataset.type;
+    let result;
 
     if (type === "numeric") {
       if (currentInputOpr === "") {
@@ -55,14 +56,47 @@ buttons.forEach(btn => {
         input.textContent = currentInputB;
       }
     } else if (type === "operator") {
+      if (currentInputA != "") {
         currentInputOpr = val;
         input.textContent = currentInputOpr;
+        } 
+        else if (val === "-") {
+        currentInputA += val;
+        input.textContent = currentInputA;
       }
+    }
     else if (val === "C") {
       currentInputA = "";
       currentInputB = "";
       currentInputOpr = "";
+      result = "";
     }  
-    input.textContent = currentInputA + currentInputOpr + currentInputB;   
+    input.textContent = currentInputA + currentInputOpr + currentInputB; 
+    output.textContent = result;
+    
+    if (val === "=") {
+      if (currentInputA !== "" && currentInputB !== "" && currentInputOpr !== "") {
+        result = calculate(currentInputA, currentInputB, currentInputOpr);
+        output.textContent = result;
+        currentInputA = result.toString();
+        currentInputB = "";
+        currentInputOpr = "";
+      }
+      }
   });
 });
+
+function calculate(a, b, opr) {
+  const numA = parseFloat(a);
+  const numB = parseFloat(b);
+  if (opr === "+") {
+    result = numA + numB;
+  } else if (opr === "-") {
+    result = numA - numB;
+  } else if (opr === "x") {
+    result = numA * numB;
+  } else if (opr === "/") {
+    result = numA / numB;
+  }
+  return result;
+};

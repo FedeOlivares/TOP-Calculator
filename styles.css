@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "7segments";
+    src: url("fonts/7segments.woff") format("woff");
+}
 
 .container {
     display: flex;
@@ -74,6 +78,7 @@
 }
 
 #input, #output {
+    font-family: "7segments";
     margin-right: 3vw;
     align-self: flex-end;
     margin-top: 0.5vh;
