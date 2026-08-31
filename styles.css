@@ -1,9 +1,10 @@
 @font-face {
-    font-family: "7segments";
-    src: url("fonts/7segments.woff") format("woff");
+    font-family: "7segment";
+    src: url("fonts/7segment.woff") format("woff");
 }
 
 .container {
+    font-family: "7segment", monospace;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -11,9 +12,13 @@
     justify-content: center;
     height: 80%;
     width: 70%;
-    background-color: grey;
+    background-color: #808080;
     margin: 10% 15%;
     border-radius: 2em;
+    border-radius: 1em;
+    border-width: 0.4em;
+    border-style: groove;
+    border-color: #b3afaf;
     padding: 5vh;
 }
 
@@ -23,10 +28,13 @@
     align-items: center;
     justify-content: center;
     height: 10vh;
-    width: 90%;
-    background-color: white;
+    width: 87%;
+    background-color: #9EAE8C;
     margin-bottom: 1vh;
-    border-radius: 2em;
+    border-radius: 1em;
+    border-width: 0.2em;
+    border-style: groove;
+    border-color: #9baa8ace;
 }   
 
 .keypadContainer {
@@ -49,6 +57,10 @@
     width: 90%;
     background-color: rgb(189, 176, 176);
     margin: 5%;
+    border-width: 0.3em;
+    border-style: groove;
+    border-color: rgba(128, 122, 122, 0.774);
+    border-radius: 1em;
 }
 
 .btn {
@@ -58,8 +70,11 @@
     font-size: 4em;
     font-weight: bold;
     background-color: rgb(128, 122, 122);
-    border: none;
-    border-radius: 0.2em;
+    border-radius: 2em;
+    border-width: 0.2em;
+    border-style: groove;
+    border-color: rgba(128, 122, 122, 0.774);
+    border-radius: 0.1em;
     cursor: pointer;
 }
 .btn.zero {
@@ -78,17 +93,16 @@
 }
 
 #input, #output {
-    font-family: "7segments";
     margin-right: 3vw;
     align-self: flex-end;
     margin-top: 0.5vh;
-    margin-bottom: 0.5vh;
+    margin-bottom: 0.1vh;
 }
 
 #input {
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 #output {
-    font-size: 2em;
+    font-size: 3em;
 }

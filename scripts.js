@@ -45,31 +45,38 @@ buttons.forEach(btn => {
   btn.addEventListener("click", () => {
     const val = btn.textContent;
     const type = btn.dataset.type;
-    let result;
+    let result = 0;
 
     if (type === "numeric") {
+
       if (currentInputOpr === "") {
         currentInputA += val;
         input.textContent = currentInputA;
+        output.textContent = result;
+        
       } else {
         currentInputB += val;
         input.textContent = currentInputB;
+        output.textContent = result;
+        
       }
     } else if (type === "operator") {
       if (currentInputA != "") {
         currentInputOpr = val;
         input.textContent = currentInputOpr;
         } 
+        // handle when you want term a to be negative.
         else if (val === "-") {
         currentInputA += val;
         input.textContent = currentInputA;
       }
     }
     else if (val === "C") {
+      
       currentInputA = "";
       currentInputB = "";
       currentInputOpr = "";
-      result = "";
+      result = "0";
     }  
     input.textContent = currentInputA + currentInputOpr + currentInputB; 
     output.textContent = result;
